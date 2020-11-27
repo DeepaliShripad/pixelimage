@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Album List</h1>
+  <h2>Selected album (Max 2 allow)</h2> 
+  <div *ngIf="selectedAlbumArray.length>0">
+    <div *ngFor="let l of  selectedAlbumArray">
+      {{l}}
+    </div>
+    
+  </div>
+ 
+  <div class="row">
+    <button (click)="onClickViewPhotos()">View Photos</button>
+    <br>
+      <div class="col-md-12">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">User id</th>
+                  <th scope="col">Id </th>
+                  <th scope="col">Name</th>
+              
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let p of albumList" (click)="onClickAlbum(p.id)">
+                  <td>{{p.userId}}</td>
+                  <td>{{p.id}}</td>
+                  <td>{{p.title}}</td>
+                </tr>
+        </tbody>
+            </table>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

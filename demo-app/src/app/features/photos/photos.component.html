@@ -1,0 +1,18 @@
+<h2>Time {{ dateObj | date:'mm:ss' }} </h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Album id</th>
+            <th scope="col">Img </th>
+            <th scope="col">Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of finalList" >
+            <td>{{p.albumId}}</td>
+            <td><img src="{{p.thumbnailUrl}}" height="8px" width="8px"></td>
+            <td>{{p.title}}</td>
+          </tr>
+        </tbody>
+</table>
+<router-outlet></router-outlet>
